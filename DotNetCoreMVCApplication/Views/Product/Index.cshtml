@@ -1,0 +1,31 @@
+﻿@model List<DotNetCoreMVCApplication.Models.ProductViewModel>
+<h1>Index View</h1>
+
+<div class="container mt-5">
+    <h2>List Of Product</h2>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Product Name</th>
+                <th>Product Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(var pro in Model)
+            {
+                <tr>
+                    <td>@pro.Id</td>
+                    <td>@pro.productName</td>
+                    <td>@pro.productDescription</td>
+                    <td>
+                        <a asp-action="Edit" asp-controller="Product" asp-action="addProduct" asp-route-id="@pro.Id">Edit</a>
+                    </td>
+                </tr>
+            }
+            
+            
+        </tbody>
+    </table>
+    <a class="nav-link text-dark" asp-area="" asp-controller="Product" asp-action="addProduct">Back</a>
+</div>

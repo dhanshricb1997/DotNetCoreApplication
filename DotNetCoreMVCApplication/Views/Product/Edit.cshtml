@@ -1,0 +1,16 @@
+﻿@model DotNetCoreMVCApplication.Models.ProductViewModel
+<h2>Edit Product</h2>
+
+<form asp-action="Edit" method="post">
+    <input type="hidden" asp-for="Id" />
+
+    <div class="form-group">
+        <label asp-for="productName">Product Name:</label>
+        <input asp-for="productName" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="productDescription">Product Description:</label>
+        <input asp-for="productDescription" class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-primary mt-3">Save Changes</button>
+</form>
